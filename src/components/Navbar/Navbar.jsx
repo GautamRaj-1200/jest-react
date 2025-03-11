@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-// import "./navbar.css";
+import "./navbar.css";
 import navbarLogo from "../../images/claude-icon.png"
 const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(false);
