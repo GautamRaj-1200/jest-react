@@ -104,3 +104,34 @@ test("Check sum of 2 positive numbers", () => {
 ## React Testing Library and Testing React using RTL and JEST
 - RTL is a part of Testing Library.
 - RTL uses jest behind the scenes.
+
+```js
+import { render } from "@testing-library/react";
+import Navbar from "../Navbar/Navbar";
+test("Logo should load on rendering Navbar", () => {
+  //Load Navbar
+  const navbar = render(<Navbar />);
+  console.log(navbar);
+  //check if logo is loaded
+});
+```
+
+```bash
+ Support for the experimental syntax 'jsx' isn't currently enabled (5:25):
+```
+
+```json
+{
+    "presets": [
+        ["@babel/preset-env", {"targets": {"node": "current"}}],
+        ["@babel/preset-react",{"runtime":"automatic"}]
+    ]
+}
+```
+
+Also install : `npm i -D @babel/preset-react`
+
+
+// Module name mapper is the place where we can tell jest that all the png image take it from dummy image
+
+"\\.(jpg|png|svg)$": "./mocks/dummyLogo.js",

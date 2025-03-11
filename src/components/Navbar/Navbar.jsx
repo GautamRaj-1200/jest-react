@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import "./navbar.css";
+// import "./navbar.css";
+import navbarLogo from "../../images/claude-icon.png"
 const Navbar = () => {
   const [navbarVisible, setNavbarVisible] = useState(false);
   const navbarRef = useRef(null);
@@ -38,7 +39,7 @@ const Navbar = () => {
       <header className="header">
         <nav className="navbar">
           <div className="navbar__logo">
-            <div className="navbar__logo-container"><img src="https://img.freepik.com/free-vector/colorful-letter-gradient-logo-design_474888-2309.jpg?ga=GA1.1.625570642.1715933306&semt=ais_hybrid" alt="" /></div>
+            <div className="navbar__logo-container"><img src={navbarLogo} alt="" /></div>
           </div>
           <ul
             ref={navbarRef}
