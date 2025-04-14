@@ -6,29 +6,140 @@
 
 ## Why do we need test cases?
 - When we add new code/feature,it is not breaking our existing code/feature.
-- Suppose we have 1000s of components, and we add 1 more component, how sure can we be that we are not breaking any one of the 1000 components. - Testing gives us that confidence.
+- Suppose we have 1000s of components, and we add 1 more component, how sure can we be sure that we are not breaking any one of the 1000 components. - Testing gives us that confidence.
 - It gives us maintainable code for big teams.
 
 ## JARGONS
 ### Test Driven Development(TDD)
 - We write test cases even before we write our code.
 - Is it bad or good? : It is very good. - We will always have 100% test coverage. - Good quality code.
-- **PROBLEM**:The development process becomes very special.
+- **PROBLEM**:The development process becomes very slow.
 - Companies don't follow this.
 - It needs a different mindset altogether.
 
-### Different types of Testing
-- **MANUAL TESTING** - 
-- **AUTOMATION TESTING** - *Selenium*(E2E Testing)
-- **End To End(E2E) Testing** - *Cypress* - Tests whole flow, Covers entire user journey - This part is off loaded to QA team.
-  - They use a headless browser(Kind of actual browser but no UI), with headless browser we can execute test cases faster. It does not have to  paint. It will have Virtual DOM and diffing algorithms.
-- **UNIT TESTING** - Core job of developers
-- **INTEGRATION TESTING** - Also done by developers - Is the integration between components working?
-- **REGRESSION TESTING**
-- **SMOKE TESTING**
-- **PERFORMANCE TESTING**
 
-- Testing is like development - Time, effort, mindset is required.
+### **Types of Software Testing**
+
+Software testing ensures the quality, performance, and correctness of applications. It can be broadly categorized into **Manual Testing** and **Automation Testing**, with several subtypes based on scope and purpose.
+
+---
+
+**1. Manual Testing**
+Testing is performed manually by a tester without the use of tools or scripts.
+- Best for exploratory, usability, and ad-hoc testing.
+- Time-consuming but helps understand user perspective better.
+- Used when automation isn't cost-effective or possible.
+
+---
+
+**2. Automation Testing**
+Tests are executed automatically using tools, frameworks, or scripts.
+- Faster, repeatable, and suitable for large-scale projects.
+- Reduces human error.
+- **Common Tools:**
+  - **Selenium** – Used for *End-to-End (E2E)* testing in web apps.
+  - **Cypress** – Also used for E2E testing; popular for fast, reliable browser tests.
+  - **Playwright**, **Puppeteer** – Modern tools supporting multiple browsers.
+
+---
+
+### **Test Types Based on Scope**
+
+**3. Unit Testing**
+- **Who?** Developers
+- **What?** Individual units/components (functions, methods, classes).
+- **Goal:** Verify each part of the code works as expected in isolation.
+- **Tools:** Jest, JUnit, NUnit, pytest
+
+---
+
+**4. Integration Testing**
+- **Who?** Developers
+- **What?** Interaction between integrated modules/components.
+- **Goal:** Ensure components work together as intended.
+- **Tools:** JUnit, Mocha, Postman (for APIs), pytest
+
+---
+
+**5. End-to-End (E2E) Testing**
+- **Who?** QA Team (often automated)
+- **What?** Full user flow from start to finish.
+- **Goal:** Test the entire system – like a real user would interact.
+- Uses **headless browsers** (no UI, faster execution).
+- **Tools:** Cypress, Selenium, Playwright, TestCafe
+
+---
+
+### **Test Types Based on Purpose**
+
+**6. Regression Testing**
+- **When?** After bug fixes, enhancements, or code changes.
+- **Goal:** Ensure existing functionality hasn’t broken.
+
+---
+
+**7. Smoke Testing**
+- **What?** Basic tests to verify critical functionalities work.
+- **Goal:** "Is the build stable enough to proceed with further testing?"
+
+---
+
+**8. Performance Testing**
+- *Goal:** Measure system performance under various conditions.
+- **Subtypes:**
+  - **Load Testing** – Expected load
+  - **Stress Testing** – Beyond expected load
+  - **Spike Testing** – Sudden increases in load
+  - **Endurance Testing** – Extended load duration
+- **Tools:** JMeter, Locust, Gatling, k6
+
+---
+
+### **Additional Types**
+
+**9. Usability Testing**
+- **Goal:** Evaluate user experience and ease of use.
+- **Performed by:** Real users or UX experts.
+
+---
+
+###  **10. Security Testing**
+- **Goal:** Identify vulnerabilities and ensure data protection.
+- **Tools:** OWASP ZAP, Burp Suite
+
+---
+
+**11. Compatibility Testing**
+- **Goal:** Check app on various browsers, devices, OS, and networks.
+
+---
+
+**12. Acceptance Testing**
+- **Who?** Client or QA team
+- **Goal:** Validate the system meets business requirements.
+- **Types:** Alpha (in-house), Beta (real users)
+
+---
+
+**Summary Table**
+
+| Type                  | Done By       | Purpose                                | Tool Examples             |
+|-----------------------|---------------|----------------------------------------|---------------------------|
+| Manual Testing        | Tester         | Exploratory/Ad-hoc                     | None                      |
+| Automation Testing    | QA/Dev         | Speed, repetition                      | Selenium, Cypress         |
+| Unit Testing          | Developer      | Test individual code units             | Jest, JUnit, pytest       |
+| Integration Testing   | Developer      | Test component interaction             | Mocha, Postman            |
+| E2E Testing           | QA/Automation  | Test full user flow                    | Cypress, Playwright       |
+| Regression Testing    | QA/Automation  | Check old features after changes       | Selenium, TestNG          |
+| Smoke Testing         | QA             | Sanity check                           | Manual/Scripts            |
+| Performance Testing   | QA/DevOps      | Test system speed & stability          | JMeter, k6                |
+| Usability Testing     | UX/Users       | Improve user experience                | Observation               |
+| Security Testing      | Security Team  | Find vulnerabilities                   | OWASP ZAP, Burp Suite     |
+| Compatibility Testing | QA             | Cross-platform/browser testing         | BrowserStack              |
+| Acceptance Testing    | Client/QA      | Business requirement validation        | Manual/Scripts            |
+
+---
+- ***Testing is like development - Time, effort, mindset is required***.
 
 ## JEST and JS Testing
 - It is a delightful JS testing framework.

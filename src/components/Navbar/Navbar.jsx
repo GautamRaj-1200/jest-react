@@ -39,7 +39,7 @@ const Navbar = () => {
       <header className="header">
         <nav className="navbar">
           <div className="navbar__logo">
-            <div className="navbar__logo-container"><img src={navbarLogo} alt="" /></div>
+            <div className="navbar__logo-container"><img data-testid="navbar-logo" src={navbarLogo} alt="" /></div>
           </div>
           <ul
             ref={navbarRef}
